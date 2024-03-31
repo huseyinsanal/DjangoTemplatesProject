@@ -13,8 +13,30 @@
     <br>
     <h2>Amsterdam : {{Amsterdam}}</h2>
     <br>
-    <h2>Paris : {{Paris.4}}</h2>
+    <ul>
+    {% for key,values in Rome.items %}
+        <h2><li>Rome : {{key}} : {{values}}</li></h2>
+    {% endfor %}
+    </ul>
     <br>
-    <h2>Rome (Morning) : {{Rome.Morning}}, Rome (Evening) : {{Rome.Evening}}</h2>
+    {% if user_premium %}
+        <ul>
+        {% for item in Paris %}
+            {% if item < 6  %}
+            <h2><li>Paris : Too Cold</li></h2>
+            {%else%}
+            <h2><li>Paris : {{item}}</li></h2>
+            {% endif %}
+        {% endfor %}
+        </ul>
+    {% endif %}
+    
+    <br>
+
+    <h2>{{test | upper}}</h2>
+
+    <br>
+
+    <h2><a href="{% url 'template_app:index' %}">Go to Index</a></h2>
 </body>
 </html>
