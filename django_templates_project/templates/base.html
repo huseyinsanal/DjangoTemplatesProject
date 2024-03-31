@@ -85,6 +85,9 @@
       .bd-mode-toggle .dropdown-menu .active .bi {
         display: block !important;
       }
+      body {
+        min-height: 75rem;
+      }
     </style>
 
 
@@ -93,17 +96,19 @@
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Top navbar</a>
+          <a class="navbar-brand" href="#">Weather App</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <!--<h2><a href="{% url 'template_app:index' %}">Go to Index</a></h2>-->
+
+                <a class="nav-link active" aria-current="page" href="{% url 'template_app:index' %}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="{% url 'template_app:weatherview' %}">Weather Report</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link disabled" aria-disabled="true">Disabled</a>
@@ -116,7 +121,6 @@
           </div>
         </div>
       </nav>
-      <br><br><br><br><br><br><br><br><br><br>
       
       {% block content %}
 
